@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股市场研究日报 | 2026.05.27</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --ink: #0a0f1a;
+    --paper: #f8f6f1;
+    --cream: #ede9e0;
+    --gold: #c9a84c;
+    --gold-light: #e8d48b;
+    --red: #c23030;
+    --green: #2a7d4f;
+    --blue: #1a3a5c;
+    --blue-light: #2d5f8a;
+    --gray: #6b7280;
+    --gray-light: #d1d5db;
+    --accent: #8b4513;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 900px;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ═══ COVER ═══ */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 60px 50px;
+    position: relative;
+    background: linear-gradient(175deg, var(--ink) 0%, #111827 40%, #1a2744 100%);
+    color: white;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    border: 1px solid rgba(201, 168, 76, 0.08);
+    border-radius: 50%;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -200px; left: -150px;
+    width: 500px; height: 500px;
+    border: 1px solid rgba(201, 168, 76, 0.05);
+    border-radius: 50%;
+  }
+  .cover-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 40px;
+    position: relative; z-index: 2;
+  }
+  .cover-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    position: relative; z-index: 2;
+  }
+  .cover-title-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 40px;
+    position: relative; z-index: 2;
+  }
+  .cover-divider {
+    width: 60px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 30px;
+    position: relative; z-index: 2;
+  }
+  .cover-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 460px;
+    line-height: 2;
+    font-weight: 300;
+    position: relative; z-index: 2;
+  }
+  .cover-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    padding-top: 24px;
+    position: relative; z-index: 2;
+  }
+  .cover-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 3px;
+  }
+  .cover-issue {
+    text-align: right;
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 1px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .cover-issue span {
+    display: block;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 3px;
+  }
+
+  /* ═══ CONTENT ═══ */
+  .content-page {
+    padding: 50px 60px 70px;
+    position: relative;
+  }
+  .content-page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 60px; right: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+  }
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--gray-light);
+  }
+  .page-header-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .page-header-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(201, 168, 76, 0.1);
+    position: absolute;
+    top: 40px; right: 50px;
+    line-height: 1;
+  }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .section-title-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+  .section-bar {
+    width: 40px; height: 3px;
+    background: var(--gold);
+    margin-bottom: 22px;
+  }
+  h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 28px 0 12px;
+    padding-left: 14px;
+    border-left: 3px solid var(--gold);
+  }
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 18px 0 8px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #374151;
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+
+  /* ═══ KPI ═══ */
+  .kpi-row {
+    display: flex;
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .kpi-card {
+    flex: 1;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .kpi-card.up::before { background: var(--green); }
+  .kpi-card.down::before { background: var(--red); }
+  .kpi-card.flat::before { background: var(--gold); }
+  .kpi-card.info::before { background: var(--blue); }
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .kpi-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .kpi-change {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .kpi-change.positive { color: var(--green); }
+  .kpi-change.negative { color: var(--red); }
+  .kpi-change.neutral { color: var(--gray); }
+  .kpi-note {
+    font-size: 9px;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  /* ═══ TABLE ═══ */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 11px;
+  }
+  thead th {
+    background: var(--ink);
+    color: white;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 11px 14px;
+    text-align: left;
+  }
+  thead th:first-child { border-radius: 6px 0 0 0; }
+  thead th:last-child { border-radius: 0 6px 0 0; }
+  tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0eeea;
+    font-size: 11px;
+  }
+  tbody tr:nth-child(even) { background: rgba(237, 233, 224, 0.3); }
+  tbody tr:hover { background: rgba(201, 168, 76, 0.06); }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .up-tag { color: var(--green); font-weight: 600; }
+  .down-tag { color: var(--red); font-weight: 600; }
+  .flat-tag { color: var(--gray); }
+
+  /* ═══ HIGHLIGHT BOX ═══ */
+  .highlight-box {
+    background: linear-gradient(135deg, #fdfbf5, #f5f0e5);
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .highlight-box p { font-size: 11px; margin-bottom: 6px; }
+  .highlight-box strong { color: var(--blue); }
+
+  /* ═══ NEWS CARD ═══ */
+  .news-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0eeea;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: rgba(201, 168, 76, 0.2);
+    width: 40px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .news-content {
+    flex: 1;
+    font-size: 12px;
+    color: #374151;
+    line-height: 1.9;
+  }
+  .news-content strong { color: var(--ink); }
+
+  /* ═══ SECTOR CARD ═══ */
+  .sector-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 14px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .sector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .sector-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .sector-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 3px 12px;
+    border-radius: 3px;
+    background: rgba(194, 48, 48, 0.08);
+    color: var(--red);
+  }
+  .sector-desc {
+    font-size: 11px;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  .stock-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .stock-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .stock-tag.hot {
+    background: rgba(194, 48, 48, 0.08);
+    color: var(--red);
+    border: 1px solid rgba(194, 48, 48, 0.15);
+  }
+  .stock-tag.warm {
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+  }
+
+  /* ═══ RESEARCH CARD ═══ */
+  .research-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+  .research-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light), var(--gold));
+  }
+  .research-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .research-subtitle {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .research-body p {
+    font-size: 11.5px;
+    line-height: 1.9;
+  }
+  .research-body ul {
+    margin: 8px 0 12px 18px;
+    font-size: 11.5px;
+    color: #374151;
+    line-height: 2;
+  }
+  .research-body li {
+    margin-bottom: 4px;
+  }
+
+  /* ═══ STRATEGY BOX ═══ */
+  .strategy-row {
+    display: flex;
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .strategy-card {
+    flex: 1;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .strategy-card.short {
+    background: linear-gradient(135deg, #fef3c7, #fde68a20);
+    border: 1px solid #f59e0b40;
+  }
+  .strategy-card.long {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d020);
+    border: 1px solid #10b98140;
+  }
+  .strategy-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .strategy-card.short .strategy-label { color: #b45309; }
+  .strategy-card.long .strategy-label { color: #047857; }
+  .strategy-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .strategy-desc {
+    font-size: 10.5px;
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  /* ═══ CALLOUT ═══ */
+  .callout {
+    display: flex;
+    gap: 16px;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe30);
+    border: 1px solid #93c5fd50;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .callout-icon { font-size: 24px; flex-shrink: 0; line-height: 1; }
+  .callout-text {
+    font-size: 11px;
+    color: #1e40af;
+    line-height: 1.8;
+  }
+  .callout-text strong { color: #1e3a8a; }
+
+  /* ═══ BAR CHART ═══ */
+  .bar-chart { margin: 16px 0; }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 12px;
+  }
+  .bar-label {
+    font-size: 10px;
+    color: var(--ink);
+    width: 80px;
+    flex-shrink: 0;
+    text-align: right;
+    font-weight: 500;
+  }
+  .bar-track {
+    flex: 1;
+    height: 20px;
+    background: #f0eeea;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+  .bar-fill.pos { background: linear-gradient(90deg, var(--green), #34d399); }
+  .bar-fill.neg { background: linear-gradient(90deg, var(--red), #f87171); margin-left: auto; }
+  .bar-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    width: 60px;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+  .bar-value.pos { color: var(--green); }
+  .bar-value.neg { color: var(--red); }
+
+  /* ═══ FOOTER ═══ */
+  .page-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 60px; right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--gray-light);
+    padding-top: 10px;
+    font-size: 8px;
+    color: var(--gray);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ═══ DISCLAIMER ═══ */
+  .disclaimer {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+  .disclaimer p {
+    font-size: 9.5px;
+    color: var(--gray);
+    line-height: 1.9;
+    text-align: left;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-light), transparent);
+    margin: 30px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ COVER ═══════════ -->
+<div class="page">
+  <div class="cover">
+    <div>
+      <div class="cover-label">A股市场 &middot; 机构研究日报 &middot; Research Daily</div>
+      <div class="cover-title">A股市场研究<br>日报</div>
+      <div class="cover-title-en">China A-Share Market Research Daily</div>
+      <div class="cover-divider"></div>
+      <div class="cover-subtitle">
+        机构研究总结与市场消息汇总<br>
+        重磅财经信息 &middot; 大盘复盘 &middot; 强势板块解析<br>
+        个股深度研究 &middot; 行业趋势洞察
+      </div>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-date">2026.05.27</div>
+      <div class="cover-issue">
+        <span>DAILY REPORT</span>
+        5月27日（晚）收盘复盘
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P2: 重磅财经 + 大盘 ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="section-number">01</div>
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <div class="section-title">重磅财经信息</div>
+    <div class="section-title-en">Key Financial & Policy Headlines</div>
+    <div class="section-bar"></div>
+
+    <div class="news-item">
+      <div class="news-num">①</div>
+      <div class="news-content">
+        <strong>AI 与低空经济立法加速推进</strong><br>
+        我国将加快研究推进<strong>人工智能健康发展综合性立法</strong>及<strong>低空经济立法</strong>。政策层面为 AI 产业和低空经济赛道提供制度性保障，利好相关产业链长期发展。
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-num">②</div>
+      <div class="news-content">
+        <strong>1—4月规上工业企业利润同比增18.2%</strong><br>
+        全国规模以上工业企业利润同比增长 18.2%，较 1—3 月加快 2.7 个百分点，工业盈利修复趋势持续向好，制造业景气度回升信号明确。
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-num">③</div>
+      <div class="news-content">
+        <strong>半导体产业链利润爆发式增长</strong><br>
+        1—4月半导体相关产业带动：电子专用材料制造利润增长 <strong>601.7%</strong>，光纤制造增长 <strong>347.6%</strong>，光电子器件制造增长 <strong>51.0%</strong>。AI 算力需求持续拉动上游产业链。
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="section-title">大盘表现</div>
+    <div class="section-title-en">Market Performance — May 27, 2026</div>
+    <div class="section-bar"></div>
+
+    <p>沪指低开低走，深证成指同步调整。创业板指盘中点位一度超越沪指（历史罕见），随后冲高回落，最终微涨0.07%。科创50跌幅最大，下跌2.8%。沪深京三市成交额超3.2万亿元，较前日微幅缩量。</p>
+
+    <div class="kpi-row">
+      <div class="kpi-card down">
+        <div class="kpi-label">上证指数</div>
+        <div class="kpi-value">-1.25%</div>
+        <div class="kpi-change negative">▼ 跌</div>
+        <div class="kpi-note">大盘蓝筹领跌</div>
+      </div>
+      <div class="kpi-card down">
+        <div class="kpi-label">深证成指</div>
+        <div class="kpi-value">-0.88%</div>
+        <div class="kpi-change negative">▼ 跌</div>
+        <div class="kpi-note">跟随沪指调整</div>
+      </div>
+      <div class="kpi-card up">
+        <div class="kpi-label">创业板指</div>
+        <div class="kpi-value">+0.07%</div>
+        <div class="kpi-change positive">▲ 微涨</div>
+        <div class="kpi-note">盘中一度超越沪指</div>
+      </div>
+      <div class="kpi-card down">
+        <div class="kpi-label">科创50</div>
+        <div class="kpi-value">-2.80%</div>
+        <div class="kpi-change negative">▼ 重挫</div>
+        <div class="kpi-note">科技股回调</div>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi-card info">
+        <div class="kpi-label">成交额</div>
+        <div class="kpi-value" style="font-size:20px;">3.2万亿+</div>
+        <div class="kpi-note">沪深京三市合计，较昨日微缩</div>
+      </div>
+    </div>
+
+    <!-- Visual Bar -->
+    <h3>主要指数涨跌幅对比</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">创业板指</div>
+        <div class="bar-track"><div class="bar-fill pos" style="width: 1.5%; margin-left: 50%;"></div></div>
+        <div class="bar-value pos">+0.07%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">深证成指</div>
+        <div class="bar-track"><div class="bar-fill neg" style="width: 16%;"></div></div>
+        <div class="bar-value neg">-0.88%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">上证指数</div>
+        <div class="bar-track"><div class="bar-fill neg" style="width: 22%;"></div></div>
+        <div class="bar-value neg">-1.25%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">科创50</div>
+        <div class="bar-track"><div class="bar-fill neg" style="width: 50%;"></div></div>
+        <div class="bar-value neg">-2.80%</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-icon">⚡</div>
+      <div class="callout-text">
+        <strong>盘面特征：</strong>大盘权重股拖累指数，但结构性行情活跃。电力、超级电容、电网设备、AI短剧、白酒等板块逆势走强，多只个股涨停。市场呈现"指数跌、个股强"的分化格局。
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 2</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P3: 强势板块（上） ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="section-number">02</div>
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <div class="section-title">强势板块解析</div>
+    <div class="section-title-en">Sector Analysis — Hot Themes & Leading Stocks</div>
+    <div class="section-bar"></div>
+
+    <p>5月27日市场结构性行情突出，以下板块逆势走强，资金聚焦电力基建、AI算力基础设施、消费复苏等核心主线。</p>
+
+    <!-- 电力 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">⚡ 电力</div>
+        <div class="sector-tag">涨停潮</div>
+      </div>
+      <div class="sector-desc">截至4月底，全国累计发电装机容量39.9亿千瓦（+14.2%）。太阳能装机12.5亿千瓦（+26.2%），风电6.6亿千瓦（+22.0%），新能源装机持续高增。1—4月全国发电设备累计平均利用925小时。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">华电能源 涨停</span>
+        <span class="stock-tag hot">华电辽能 涨停</span>
+        <span class="stock-tag hot">华能蒙电 涨停</span>
+        <span class="stock-tag hot">华银电力 涨停</span>
+        <span class="stock-tag hot">粤电力A 涨停</span>
+        <span class="stock-tag hot">韶能股份 涨停</span>
+        <span class="stock-tag hot">辽宁能源 涨停</span>
+        <span class="stock-tag warm">节能风电</span>
+        <span class="stock-tag warm">京能电力</span>
+        <span class="stock-tag warm">晋控电力</span>
+      </div>
+    </div>
+
+    <!-- 超级电容 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🔋 超级电容</div>
+        <div class="sector-tag">AI算力驱动</div>
+      </div>
+      <div class="sector-desc">AIDC 算力密度跃迁驱动供电架构变革，超级电容已从实验室方案走向<strong>机柜级标配</strong>。2026下半年 NVIDIA Rubin 平台放量将是产业链业绩兑现的关键窗口。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">江海股份 涨停</span>
+        <span class="stock-tag hot">艾华集团 涨停</span>
+        <span class="stock-tag hot">凯恩股份 涨停</span>
+        <span class="stock-tag hot">海星股份 涨停</span>
+        <span class="stock-tag warm">元力股份</span>
+        <span class="stock-tag warm">法拉电子</span>
+        <span class="stock-tag warm">火炬电子</span>
+        <span class="stock-tag warm">新疆众和</span>
+      </div>
+    </div>
+
+    <!-- 电网设备 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🔌 电网设备</div>
+        <div class="sector-tag">数据中心电力瓶颈</div>
+      </div>
+      <div class="sector-desc">美银报告指出：随着英伟达 GPU 平台迭代，数据中心机柜功耗将从传统10—15千瓦飙升至2029—2030年 Feynman 平台时代的<strong>逾1.5兆瓦</strong>，涨幅近100倍，现有电力基础设施无力承载。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">四方股份 涨停</span>
+        <span class="stock-tag hot">良信股份 涨停</span>
+        <span class="stock-tag hot">泰永长征 涨停</span>
+        <span class="stock-tag hot">天正电气 涨停</span>
+        <span class="stock-tag warm">通合科技</span>
+        <span class="stock-tag warm">中恒电气</span>
+        <span class="stock-tag warm">金盘科技</span>
+        <span class="stock-tag warm">明阳电气</span>
+      </div>
+    </div>
+
+    <!-- AI短剧 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🎬 AI短剧出海</div>
+        <div class="sector-tag">订单爆发</div>
+      </div>
+      <div class="sector-desc">AI短剧出海订单激增，部分企业订单预计<strong>暴增5000%</strong>，正加码布局海外定制内容。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">百纳千成 涨停</span>
+        <span class="stock-tag hot">欢瑞世纪 涨停</span>
+        <span class="stock-tag hot">掌阅科技 涨停</span>
+        <span class="stock-tag warm">中文在线</span>
+        <span class="stock-tag warm">捷成股份</span>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 3</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P4: 强势板块（下） ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <!-- 消费零售 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🛒 零售/消费</div>
+        <div class="sector-tag">消费复苏</div>
+      </div>
+      <div class="sector-desc">1—4月商品和服务零售合并计算同比增长 3.2%，其中社会消费品零售总额增长 1.9%，服务零售额增长 5.6%，消费市场呈平稳运行、向新向优态势。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">步步高 涨停</span>
+        <span class="stock-tag hot">中百集团 涨停</span>
+        <span class="stock-tag hot">佳禾食品 涨停</span>
+        <span class="stock-tag warm">友阿股份</span>
+        <span class="stock-tag warm">永辉超市</span>
+        <span class="stock-tag warm">宁波中百</span>
+      </div>
+    </div>
+
+    <!-- 白酒 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🍷 白酒</div>
+        <div class="sector-tag">价盘稳中有升</div>
+      </div>
+      <div class="sector-desc">年初至今白酒由旺转淡过程中，核心单品价盘保持<strong>稳中有升</strong>态势，茅台酒价盘预期持续上修，行业基本面韧性凸显。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">水井坊 涨停</span>
+        <span class="stock-tag warm">舍得酒业</span>
+        <span class="stock-tag warm">金徽酒</span>
+        <span class="stock-tag warm">金种子酒</span>
+        <span class="stock-tag warm">酒鬼酒</span>
+      </div>
+    </div>
+
+    <!-- 工业气体 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🧪 工业气体</div>
+        <div class="sector-tag">出口价格飙升</div>
+      </div>
+      <div class="sector-desc">4月单月六氟化钨出口均价 149.79 美元/公斤，同比 +28.33%，环比 <strong>+203.83%</strong>。1—4月出口均价逐月攀升（68.75 → 69.11 → 116.72 → 149.79 美元/公斤），景气度持续走高。</div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">和远气体 涨停</span>
+        <span class="stock-tag warm">中船特气</span>
+        <span class="stock-tag warm">昊华科技</span>
+      </div>
+    </div>
+
+    <!-- 碳化硅 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">💎 碳化硅（SiC）</div>
+        <div class="sector-tag">8倍增长空间</div>
+      </div>
+      <div class="sector-desc">到2030年整体电源的 SiC 衬底需求有望接近<strong>700亿元</strong>，实现近8倍增长。8寸下游 FAB 线大量扩产将大幅刺激衬底与设备需求。</div>
+      <div class="stock-tags">
+        <span class="stock-tag warm">晶升股份</span>
+        <span class="stock-tag warm">扬杰科技</span>
+        <span class="stock-tag warm">天岳先进</span>
+        <span class="stock-tag warm">新洁能</span>
+      </div>
+    </div>
+
+    <!-- PCB -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">🖥️ PCB 概念</div>
+        <div class="sector-tag">涨停</div>
+      </div>
+      <div class="stock-tags">
+        <span class="stock-tag hot">中京电子 涨停</span>
+        <span class="stock-tag hot">合锻智能 涨停</span>
+        <span class="stock-tag hot">华塑控股 涨停</span>
+        <span class="stock-tag warm">唯特偶</span>
+      </div>
+    </div>
+
+    <!-- 其他涨停 -->
+    <div class="sector-card">
+      <div class="sector-header">
+        <div class="sector-name">📌 其他涨停个股</div>
+        <div class="sector-tag">事件驱动</div>
+      </div>
+      <div class="sector-desc">
+        <strong>旭光电子</strong>：子公司与韩国半导体客户达成氮化铝产品合作意向<br>
+        <strong>三祥新材</strong>：铪材料有望成为 AI 硬件难以替代的核心功能材料<br>
+        <strong>利柏特</strong>：工业模块设计和制造<br>
+        <strong>TCL中环</strong>：光伏板块
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 4</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P5: 个股深度研究（上） ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="section-number">03</div>
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <div class="section-title">个股深度研究</div>
+    <div class="section-title-en">Company Deep Dives — Institutional Research Highlights</div>
+    <div class="section-bar"></div>
+
+    <!-- 振江股份 -->
+    <div class="research-card">
+      <div class="research-title">振江股份 — 风电A股"富士康"，业务空间持续打开</div>
+      <div class="research-subtitle">风电零部件 → 风机组装 → 铸件 → 单桩，四阶段成长路径清晰</div>
+      <div class="research-body">
+        <p><strong>核心逻辑：</strong>公司是风电零部件欧洲敞口最大的A股公司，80%业绩来自欧洲风电。基于领先的客户渠道卡位，正从单一零部件供应商向风机总装商升级，同步导入新品类，持续打开成长天花板。</p>
+
+        <h4 style="margin-top:16px;">四阶段成长路径</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>阶段</th>
+              <th>业务内容</th>
+              <th>收入/业绩预期</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>第一阶段</strong>（现有）</td>
+              <td>向西门子等销售定转子等风电零部件</td>
+              <td>年收入25亿，业绩~2亿</td>
+            </tr>
+            <tr>
+              <td><strong>第二阶段</strong>（兑现中）</td>
+              <td>拿到西门子/维斯塔斯/Nordex风机组装业务，在手框架订单200亿</td>
+              <td>年均增量70-80亿收入，3-4亿业绩弹性</td>
+            </tr>
+            <tr>
+              <td><strong>第三阶段</strong>（规划中）</td>
+              <td>导入铸造主轴、轴承座等铸件，规划20万吨产能</td>
+              <td>单吨利润2K+，贡献4亿+业绩</td>
+            </tr>
+            <tr>
+              <td><strong>第四阶段</strong>（对接中）</td>
+              <td>向业主供应单桩产品（单吨利润5K）</td>
+              <td>正在深入对接，空间广阔</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box" style="margin-top:12px;">
+          <p><strong>结论：</strong>2-3年维度有望从年经营2亿业绩成长为<strong>10亿业绩</strong>，5倍增长空间。股权激励落地对27年考核目标6亿，凸显经营信心。Q1经营拐点已现，创历史新高。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 东田微 -->
+    <div class="research-card">
+      <div class="research-title">东田微 — "滤光片+隔离器"步入双涨价+缺货周期</div>
+      <div class="research-subtitle">硅透镜 + OCS 期权尚未定价 | 目标市值空间500亿</div>
+      <div class="research-body">
+        <p><strong>隔离器：</strong>锁定住友旋光片长协产能，上游涨价不影响下游利润（可向下游传导），维持高毛利率。</p>
+        <p><strong>滤光片：</strong>锁定日本光池至少30台设备产能（设备交期半年以上），正积极扩产。预计27年滤光片收入/利润<strong>数倍提升</strong>。滤光片和 Z-block 为 EML 和硅光方案核心无源器件，量价齐升。</p>
+        <p><strong>硅透镜：</strong>受益硅光渗透率提升，硅透镜在硅光中用量翻倍。25年已通过大客户认证，26年开始供货扩产。27年透镜市场空间约120亿元，按中期10%份额贡献12亿收入增量。</p>
+        <p><strong>OCS 期权：</strong>提供微透镜阵列+模压模具，在海外大客户进展乐观，预计今年批量出货，贡献远期市值期权。</p>
+
+        <div class="highlight-box">
+          <p><strong>盈利预测：</strong>全行业隔离器和旋光片均步入涨价周期，预计26H2进一步提价。保守/乐观预计27年利润 <strong>9亿/12亿</strong>，给予40x PE，叠加OCS/硅透镜远期期权，合计向上看 <strong>500亿市值</strong>，当前位置至少1倍空间。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 5</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P6: 个股研究（下）+ 行业 ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <!-- 晶方科技 -->
+    <div class="research-card">
+      <div class="research-title">晶方科技 — Anteryon 分拆上市 + WaferTek 扩产</div>
+      <div class="research-subtitle">ASML 光刻机零部件供应商 | MLA + 光引擎封装期权</div>
+      <div class="research-body">
+        <p><strong>Anteryon 分拆上市：</strong>子公司 Anteryon 是 ASML 光刻机零部件供应商。此前因中国企业背景，ASML 不敢下大单。分拆上市后欧美客户更放心，公司正积极寻找产业资本方基石投资。技术实力与国内最前沿友商处同一水平。</p>
+        <p><strong>WaferTek 扩产：</strong>马来西亚子公司 WaferTek 增加资本开支，为车规 CIS 国内头部客户准备，是公司明年 EPS 增长的基石。</p>
+
+        <div class="callout">
+          <div class="callout-icon">💡</div>
+          <div class="callout-text">
+            <strong>投资逻辑：</strong>CIS 业务贡献扎实的市值安全边际。即将放量的 MLA、光引擎封装及 Anteryon 事件催化，当前位置赔率合适。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 罗博特科 -->
+    <div class="research-card">
+      <div class="research-title">罗博特科 — 光互联核心设备供应商</div>
+      <div class="research-subtitle">ficonTEC 收购打通英伟达/Intel/博通/台积电/思科供应链</div>
+      <div class="research-body">
+        <p>公司通过收购 ficonTEC 成功进入<strong>英伟达、Intel、博通、台积电、思科</strong>等全球科技巨头供应链体系，是多家头部企业硅光、CPO 及 OCS 产品的核心设备供应商。</p>
+        <p>通过长期严苛的客户认证体系，形成<strong>先发优势与高准入门槛</strong>，客户复购率高。光互联发展趋势下，公司有望持续受益。</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 6</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P7: 行业研究 — 锂电 + 光模块测试 ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="section-number">04</div>
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <div class="section-title">行业趋势洞察</div>
+    <div class="section-title-en">Sector Deep Dives — Lithium Battery & Optical Module Testing</div>
+    <div class="section-bar"></div>
+
+    <!-- 锂电 -->
+    <div class="research-card">
+      <div class="research-title">锂电池 — 调整到位，需求高景气趋势不改</div>
+      <div class="research-subtitle">26年全球锂电需求增长35%+ | 龙头估值仅15x（27年）</div>
+      <div class="research-body">
+        <h4>需求端</h4>
+        <ul>
+          <li>5月排产基本符合预期，行业总排产环比 +6-8%</li>
+          <li>6月初步了解环比 +5-10%，同比 <strong>+50-80%</strong>，远好于此前悲观预期</li>
+          <li>全球大储/户储需求高增 + 海外电动车销量超预期 + 国内单车带电量提升</li>
+          <li><strong>26年全球锂电需求增长35%+</strong>，27年预计增长25%+，有上修可能</li>
+        </ul>
+
+        <h4>盈利端</h4>
+        <ul>
+          <li>碳酸锂价格预计高位18-20万震荡</li>
+          <li>电池端议价强 + 顺价快，Q1盈利超预期，Q2环比持平微增</li>
+          <li>材料端：隔膜/铜箔/铝箔 26-27年盈利持续向上</li>
+          <li>6F散单价格已反弹至11-12万，仍有上行空间</li>
+        </ul>
+
+        <h4>重点推荐</h4>
+        <div class="stock-tags" style="margin:8px 0;">
+          <span class="stock-tag hot">宁德时代</span>
+          <span class="stock-tag hot">亿纬锂能</span>
+          <span class="stock-tag hot">比亚迪</span>
+          <span class="stock-tag hot">中创新航</span>
+          <span class="stock-tag warm">欣旺达</span>
+          <span class="stock-tag warm">璞泰来</span>
+          <span class="stock-tag warm">恩捷股份</span>
+          <span class="stock-tag warm">科达利</span>
+          <span class="stock-tag warm">天赐材料</span>
+          <span class="stock-tag warm">鼎胜新材</span>
+          <span class="stock-tag warm">赣锋锂业</span>
+          <span class="stock-tag warm">天齐锂业</span>
+          <span class="stock-tag warm">湖南裕能</span>
+          <span class="stock-tag warm">华友钴业</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 光模块测试 -->
+    <div class="research-card">
+      <div class="research-title">光模块测试 — 是德科技Q2超预期，国产替代空间广阔</div>
+      <div class="research-subtitle">是德科技Q2收入+31% | 国内光模块测试设备市场空间超百亿</div>
+      <div class="research-body">
+        <p><strong>催化事件：</strong>是德科技公布26年Q2业绩，收入17.2亿美元（同比+31.47%，环比+7.31%），净利润3.49亿美元（同比+35.8%）。Q2订单增速 <strong>56%</strong>，订单量超20亿美元。通信解决方案增速远高于平均，主因下游厂商加大测试投入 + 800G→1.6T→3.2T产品升级 + 硅光芯片/CPO增长。中际旭创给出超预期光模块出货量，有望带动行业资本开支提速。</p>
+
+        <h4>三大细分赛道</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>赛道</th>
+              <th>逻辑</th>
+              <th>关注标的</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>光通信检测</strong></td>
+              <td>测试设备支出占产线总设备40-50%。26-28年市场空间超380亿元，检测设备超百亿。1.6T设备价值量为800G的3-4倍</td>
+              <td>联讯仪器、华盛昌、优利德、鼎阳科技</td>
+            </tr>
+            <tr>
+              <td><strong>COC老化测试</strong></td>
+              <td>光模块组装前对COC组件筛选检测，出货量增加 + 升级检测要求提升</td>
+              <td>日联科技、联讯仪器</td>
+            </tr>
+            <tr>
+              <td><strong>硅光晶圆级测试</strong></td>
+              <td>硅光市场份额25年30%→30年60%。26年1.6T进入量产元年，出货量突破2000万只，硅光方案占比80%</td>
+              <td>联讯仪器、燕麦科技、华盛昌、杰普特</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ P8: 投资总结 + 免责 ═══════════ -->
+<div class="page">
+  <div class="content-page">
+    <div class="section-number">05</div>
+    <div class="page-header">
+      <div class="page-header-left">A-Share Research Daily</div>
+      <div class="page-header-right">2026.05.27</div>
+    </div>
+
+    <div class="section-title">今日核心结论</div>
+    <div class="section-title-en">Key Takeaways — Investment Summary</div>
+    <div class="section-bar"></div>
+
+    <div class="highlight-box">
+      <p><strong>市场判断：</strong>大盘权重股拖累指数，但结构性行情活跃。"指数跌、个股强"的分化格局持续，资金聚焦AI算力基础设施（超级电容/电网设备/光模块测试）、电力新能源、消费复苏三条主线。</p>
+    </div>
+
+    <h3>三条核心投资主线</h3>
+
+    <div class="strategy-row">
+      <div class="strategy-card short">
+        <div class="strategy-label">THEME 1</div>
+        <div class="strategy-title">AI 算力基础设施</div>
+        <div class="strategy-desc">
+          超级电容（机柜级标配）<br>
+          电网设备（数据中心功耗100倍跃迁）<br>
+          光模块测试（800G→1.6T→3.2T升级）<br>
+          <strong>核心标的：江海股份、四方股份、联讯仪器</strong>
+        </div>
+      </div>
+      <div class="strategy-card long">
+        <div class="strategy-label">THEME 2</div>
+        <div class="strategy-title">电力新能源</div>
+        <div class="strategy-desc">
+          电力（装机+14.2%，新能源占比持续提升）<br>
+          锂电池（需求+35%，龙头仅15x估值）<br>
+          碳化硅（2030年700亿空间，8倍增长）<br>
+          <strong>核心标的：华银电力、宁德时代、天岳先进</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="strategy-row">
+      <div class="strategy-card short">
+        <div class="strategy-label">THEME 3</div>
+        <div class="strategy-title">消费复苏 + 出海</div>
+        <div class="strategy-desc">
+          零售消费（社零+1.9%，服务零售+5.6%）<br>
+          白酒（价盘稳中有升，茅台预期上修）<br>
+          AI短剧出海（订单暴增5000%）<br>
+          <strong>核心标的：水井坊、百纳千成、掌阅科技</strong>
+        </div>
+      </div>
+      <div class="strategy-card long">
+        <div class="strategy-label">THEME 4</div>
+        <div class="strategy-title">半导体 + 光互联</div>
+        <div class="strategy-desc">
+          半导体材料（利润增601.7%）<br>
+          光模块/光互联（ficonTEC/硅光）<br>
+          滤光片/隔离器（涨价+缺货周期）<br>
+          <strong>核心标的：东田微、晶方科技、罗博特科</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="disclaimer">
+      <p><strong>免责声明 / Disclaimer</strong></p>
+      <p>本报告基于公开市场信息及机构研究观点整理汇编，仅供参考学习使用，不构成任何投资建议或承诺。个股信息来源于公开资料，不保证信息的准确性和完整性。</p>
+      <p>投资有风险，入市需谨慎。过往表现不代表未来收益。请投资者根据自身风险承受能力独立判断，审慎决策。</p>
+      <p>报告编制日期：2026年5月27日 | 数据截止日期：2026年5月27日收盘</p>
+    </div>
+
+    <div class="page-footer">
+      <span>A-SHARE RESEARCH DAILY</span>
+      <span>PAGE 8</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
